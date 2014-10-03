@@ -45,8 +45,47 @@ nema_motor(
 );
 */
 
+/*
+ziptie_4_rod (
+	position = [0,0,0],
+	rotation = [0,0,0],
+	rod_d = 10,
+	ziptie_height = 1,
+	ziptie_depth = 2.5,
+	from_rod = 1
+	segments = 40
+);
+*/
+
+
 //***********
 // functions
+
+module ziptie_4_rod (
+	position = [0,0,0],
+	rotation = [0,0,0],
+	rod_d = 10,
+	ziptie_height = 1,
+	ziptie_depth = 2.5,
+	from_rod = 1,
+	segments = 40
+)
+{
+	translate(position)
+	 rotate(rotation)
+	{
+		//rod view only
+//		#cylinder( d = rod_d, h = ziptie_depth + 0.5, $fn = segments);
+		
+		difference()
+		{
+			cylinder( d = rod_d + from_rod + ziptie_height + 0.5, h = ziptie_depth + 0.5, $fn = segments);
+			translate([0,0,-0.5])
+			cylinder( d = rod_d + from_rod , h = ziptie_depth + 1.5, $fn = segments);
+
+		}
+	}
+}
 
 module matka_past(
 	pozice = [0,0,0],
