@@ -34,3 +34,9 @@ nema17_axis = [5,25]; // dimension of motor axis [diameter, length]
 
 //nema17 in one array
 nema17 = [nema17_rozmer,nema17_priruba,nema17_roztec_srouby,nema17_sroubky,nema17_axis];
+
+lm8uu = [12,25];
+lm10uu = [19,29];
+lm10luu = [19,55];
+
+bearing_623 = [3,10,4];
