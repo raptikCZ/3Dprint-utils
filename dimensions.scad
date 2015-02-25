@@ -22,7 +22,7 @@ m8_podlozka = [16,1.5];
 
 //nuts [diameter of hexagonal top, height of nut or hole for nut]
 m3_matka = [6.45,2.5];
-m4_matka = [7.86,3.2]; //7.66, 3.2 (need testing)
+m4_matka = [7.66,3.2]; //7.66, 3.2 (need testing)
 m5_matka = [9.3,3.8];
 m8_matka = [14.52,6.2];
 
