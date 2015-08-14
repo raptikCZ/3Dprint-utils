@@ -56,7 +56,15 @@ ziptie_4_rod (
 	segments = 40
 );
 */
-
+/*
+roundedcylinder(
+	d = 10,
+	radius = 5,
+	top = true,
+	bottom = true,
+	resolution = 80
+);
+*/
 
 //***********
 // functions
@@ -173,6 +181,57 @@ module dira_sroub(
 	}
 	}
  }
+}
+
+module roundedcylinder(
+	d = 15,
+	radius = 5,
+	h = 20,
+    	top = true,
+	bottom = true,
+	resolution = 80
+)
+{
+   rotate_extrude( $fn = resolution) 
+   translate([0 + d/2,0,0])
+	union()
+	{   
+     hull()
+     {   
+        hull()
+        {
+            if (bottom == true)
+            {   
+                translate([0 - radius/2,0 + radius/2,0])
+                circle( d = radius, $fn = 30);
+            }
+            else
+            {
+                translate([-1,0,0])
+                square([1,1], center = false);
+            }
+            translate([0 - d/2,0,0])
+                square([1,1], center = false);
+        
+        }
+        hull()
+        {
+            if (top == true)
+            {
+                translate([0 - radius/2,0 + h - radius/2,0])
+                circle( d = radius, $fn = 30);
+            }
+            else
+            {
+                translate([-1,0 + h - 1,0])
+                square([1,1], center = false);
+            }
+            translate([0 - d/2,0 + h - 1,0])
+                square([1,1], center = false);
+        
+        }
+     }
+    }
 }
 
 module roundedBox1(
