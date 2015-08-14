@@ -59,6 +59,7 @@ ziptie_4_rod (
 /*
 roundedcylinder(
 	d = 10,
+	h = 20,
 	radius = 5,
 	top = true,
 	bottom = true,
